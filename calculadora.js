@@ -1,17 +1,24 @@
-var um = parseFloat(prompt("Digite o primeiro número: "));
-var dois = parseFloat(prompt("Digite o segundo número: "));
-var operacao = prompt("Digite a operação desejada: ");
+document.addEventListener('DOMContentLoaded', function() {
+    const display = document.getElementById('display');
+    const buttons = document.querySelectorAll('td');
 
-if (operacao == "+") {
-    var resultado = um + dois;
-} else if (operacao == "-") {
-    var resultado = um =- dois;
-} else if (operacao == "*" || operacao == "x" || operacao == "X") {
-    var resultado = um * dois;
-} else if (operacao == "/") {
-    var resultado = um / dois;
-} else {
-    var resultado = "Operação inválida";
-}   
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const buttonText = this.innerText;
 
-alert("O resultado é: " + resultado);
+            if (buttonText === 'C') {
+                display.value = '';
+            } else if (buttonText === '<') {
+                display.value = display.value.slice(0, -1);
+            } else if (buttonText === '=') {
+                try {
+                    display.value = eval(display.value.replace('X', '*'));
+                } catch {
+                    display.value = 'Error';
+                }
+            } else {
+                display.value += buttonText;
+            }
+        });
+    });
+});
