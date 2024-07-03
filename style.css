@@ -5,15 +5,21 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
     padding: 20%;
     margin-left: 20%;
     margin-right: 20%;
     width: 55%;
     height: 60%;
+    align-content: center;
+    font-size: larger;
+    border: 20px;
 }
 
 input {
     background: white;
+    padding: 1px solid white;
+    border-radius: 15px;
 }
 
 h2 {
@@ -21,7 +27,25 @@ h2 {
     color: white;
     font-weight: bold;
     text-align: center;
+    padding: 10px;
 }
 .border {
     background-color: darkgray;
+}
+
+tr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: larger;
+}
+
+td {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 15px;
+    border: 2px solid black;
+    background-color: aqua;
+    border-radius: 15px;
 }
